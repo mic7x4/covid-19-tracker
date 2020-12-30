@@ -1,6 +1,7 @@
 import { FormControl, MenuItem, Select } from '@material-ui/core';
 import { useState } from 'react';
 import './App.css';
+import Infobox from './Infobox';
 
 // https://disease.sh/v3/covid-19/countries
 
@@ -24,7 +25,7 @@ function App() {
   }, []);
 const onCountryChange = async (event)=>{
   const countryCode = event.target.value;
-  console.log("This is the countrycode "+countryCode);
+  setCountry(countryCode);
 }
   return (
     <div className="app">
@@ -38,6 +39,11 @@ const onCountryChange = async (event)=>{
       ))}
     </Select>
      </FormControl>
+     </div>
+     <div className="app__stats">
+       <Infobox title="Coronavirus Cases" cases={200} total={3000}/>
+       <Infobox title="Recovered" cases={200} total={3000}/>
+       <Infobox title="Deaths" cases={200} total={3000}/>
      </div>
     </div>
   );
