@@ -54,7 +54,6 @@ const onCountryChange = async (event)=>{
    });
 
 };
-console.log('Country Info ==>', countryInfo);
   return (
     <div className="app">
       <div className="app__left">
